@@ -23,16 +23,16 @@
 				<td>${result.name}</td>
 			</tr>
 			<tr>
-				<th>생년월일</th>
-				<td>${result.yyyymmdd}</td>
+				<th>전화번호</th>
+				<td>${result.phoneNumber}</td>
 			</tr>
 			<tr>
 				<th>이메일 주소</th>
 				<td>${result.email}</td>
 			</tr>
 			<tr>
-				<th>자기소개</th>
-				<td>${result.introduce}</td>
+				<th>장래희망</th>
+				<td>${result.dreamJob}</td>
 			</tr>
 			<tr>
 				<th>생성일</th>

@@ -9,16 +9,16 @@ public class Student {
 	private String phoneNumber;
 	private String email;
 	private String dreamJob;
+	private Date createdAt;
+	private Date updatedAt;
+	
+	
 	public String getDreamJob() {
 		return dreamJob;
 	}
 	public void setDreamJob(String dreamJob) {
 		this.dreamJob = dreamJob;
 	}
-	private Date createdAt;
-	private Date updatedAt;
-	
-	
 	public int getId() {
 		return id;
 	}
