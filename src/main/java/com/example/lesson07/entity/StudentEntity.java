@@ -20,7 +20,7 @@ import lombok.ToString;
 @ToString	// toString override 값 예쁘게 출력
 @AllArgsConstructor	// 모든 필드를 인자값으로 받는 생성자
 @NoArgsConstructor	// 파라미터 없는 기본 생성자
-@Builder	// setter 대용
+@Builder(toBuilder = true)	// setter 대용
 @Getter		// getter
 @Table(name = "studentInfo")	// 테이블명에 언더바(_)가 붙어있을 때 꼭 추가한다.
 @Entity	// 이 클래스는 Entity다
@@ -46,4 +46,5 @@ public class StudentEntity {
 	@UpdateTimestamp
 	@Column(name = "updatedAt")
 	private ZonedDateTime updatedAt;
+
 }

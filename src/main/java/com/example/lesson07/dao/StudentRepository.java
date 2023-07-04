@@ -9,4 +9,6 @@ import com.example.lesson07.entity.StudentEntity;
 public interface StudentRepository extends JpaRepository<StudentEntity, Integer>{
 	// Spring Data JPA
 	// save()
+	
+	// findById()
 }

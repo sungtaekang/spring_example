@@ -29,7 +29,7 @@ public class StudentBO {
 	
 	public StudentEntity addStudent(String name, String phoneNumber, String email, String dreamJob) {
 		StudentEntity student = studentRepository.save(
-					StudentEntity
+					StudentEntity.builder()
 					.name(name)
 					.phoneNumber(phoneNumber)
 					.email(email)
@@ -37,6 +37,24 @@ public class StudentBO {
 					.createdAt(ZonedDateTime.now())  // @UpdateTimestamp 생략가능
 					.build()
 				);
+		return student;
+	}
+
+	// input: id, dreamJob
+	// output: StudentEntity
+	public StudentEntity updateStudentDreamJobById(int id, String dreamJob) {
+		// 기존 데이터 조회(id로)
+		StudentEntity student = studentRepository.findById(id).orElse(null);
+		
+		// entity변경(dreamJob 변경) => save
+		if (student != null) {
+			student = student.toBuilder()	// toBuilder는 기존값 유지하고 일부만 변경
+				.dreamJob(dreamJob)
+				.build();
+			
+			student = studentRepository.save(student);	// update
+		}
+		
 		return student;
 	}
 }
